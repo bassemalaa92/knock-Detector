@@ -12,9 +12,9 @@
 #define KNOCK_DETECTORS_H_
 
 #include <avr/io.h>
-#define Make_Pin_Ip(port)  DDR##port &=~(1<<pin)           //where x is the port (a , b , c or D)
-#define Read_Pin(port)     PIN##port &(1<<pin)
-#define pin          2                                // Do is the pin for the digital output from MQ2 sensor
+#define Make_Pin_Ip(Knock_Port,Knock_Pin)  DDR##Knock_Port &=~(1<<Knock_Pin)           //where x is the port (a , b , c or D)
+#define Read_Pin(Knock_Port,Knock_Pin)     PIN##Knock_Port &(1<<Knock_Pin)
+
 void Knock_Dect_Init(void);
 
 unsigned char Knock_Dect_read(void);
